@@ -1,0 +1,105 @@
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      transition: background-color 0.5s ease, color 0.5s ease;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    header, footer {
+      background-color: #06f122;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      transition: background-color 0.3s ease;
+    }
+
+    footer {
+      margin-top: auto;
+    }
+
+    .container {
+      flex: 1;
+      text-align: center;
+      padding: 50px 20px;
+      opacity: 0;
+      transform: translateY(50px);
+      animation: fadeSlideIn 1.2s forwards ease-out;
+    }
+
+    @keyframes fadeSlideIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .theme-btn {
+      padding: 12px 24px;
+      font-size: 1rem;
+      border: none;
+      background-color: #28a745;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .theme-btn:hover {
+      background-color: #218838;
+      transform: scale(1.05);
+    }
+
+    .animated-img {
+      width: 100%;
+      max-width: 300px;
+      margin: 30px auto;
+      transition: transform 0.5s ease;
+    }
+
+    .animated-img:hover {
+      transform: rotate(5deg) scale(1.1);
+    }
+
+    /* Dark theme */
+    body.dark {
+      background-color: #121212;
+      color: #f1f1f1;
+    }
+
+    body.dark header,
+    body.dark footer {
+      background-color: #343a40;
+    }
+
+    body.dark .theme-btn {
+      background-color: #ffc107;
+      color: black;
+    }
+
+    body.dark .theme-btn:hover {
+      background-color: #e0a800;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      header, footer {
+        font-size: 14px;
+        padding: 15px;
+      }
+
+      .theme-btn {
+        width: 100%;
+        font-size: 1.1rem;
+      }
+    }
+ 
